@@ -7,5 +7,7 @@ public class App {
 
         jogador1.jogar();
         
+        System.out.println(LadoDominante.DIREITO.getLado());
+        System.out.println(LadoDominante.DIREITO);
     }
 }

@@ -1,4 +1,4 @@
-package interfaces;
+package atleta;
 
 public class JogadorFutebol {
     

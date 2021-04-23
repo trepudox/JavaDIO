@@ -1,4 +1,4 @@
-package interfaces;
+package atleta.interfaces;
 
 public interface AtletaUsaMao {
     

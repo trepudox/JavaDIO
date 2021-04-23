@@ -1,4 +1,6 @@
-package interfaces;
+package atleta;
+
+import atleta.interfaces.AtletaUsaMao;
 
 public class JogadorBasquete extends Atleta implements AtletaUsaMao {
     

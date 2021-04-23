@@ -1,4 +1,4 @@
-package interfaces;
+package atleta.enums;
 
 public enum LadoDominante {
     DIREITO(1, "Direito"), 

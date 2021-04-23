@@ -1,4 +1,6 @@
-package interfaces;
+package atleta;
+
+import java.util.Objects;
 
 public abstract class Atleta extends Pessoa {
     
@@ -37,5 +39,26 @@ public abstract class Atleta extends Pessoa {
     public final void setContrato(int contrato) {
         this.contrato = contrato;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getNome(), this.getIdade(), this.time, this.contrato);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        if (this.hashCode() != obj.hashCode())
+            return false;
+            
+        return true;
+    }
+
+    
 
 }

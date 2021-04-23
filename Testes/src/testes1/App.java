@@ -2,10 +2,14 @@ package testes1;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Classe obj = new Classe();
 
-        System.out.println(obj.a);
-        System.out.println(obj.b);
-        System.out.println(obj.c);
+        Classe carro = new Classe("Volkswagen", "Fusca", 5);
+
+        carro.addGente(10);
+        carro.addGente(1);
+
+        carro.tiraGente(10);
+        carro.tiraGente(3);
+        carro.tiraGente(1);
     }
 }

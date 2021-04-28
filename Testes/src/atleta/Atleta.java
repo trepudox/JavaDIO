@@ -42,7 +42,7 @@ public abstract class Atleta extends Pessoa {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getNome(), this.getIdade(), this.time, this.contrato);
+        return Objects.hash(this.getClass(), getNome(), this.getIdade(), this.time, this.contrato);
     }
 
     @Override
@@ -51,7 +51,7 @@ public abstract class Atleta extends Pessoa {
             return true;
         if (obj == null)
             return false;
-        if (getClass() != obj.getClass())
+        if (this.getClass() != obj.getClass())
             return false;
         if (this.hashCode() != obj.hashCode())
             return false;

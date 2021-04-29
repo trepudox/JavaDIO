@@ -10,6 +10,8 @@ public class App {
 
         System.out.println(jogador1.hashCode() + " " + jogador1.equals(jogador2) + " " + jogador2.hashCode());
 
+        System.out.println(jogador1.getClass());
+
         
         
     }

@@ -13,4 +13,9 @@ public class JogadorFutebol extends Atleta implements AtletaUsaPerna {
         this.correr(this.getNome());
         this.chutar(this.getNome());
     }
+    
+    @Override
+    public String toString() {
+        return this.getNome() + " jogador de futebol";
+    }
 }

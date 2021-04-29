@@ -14,4 +14,8 @@ public class JogadorBasquete extends Atleta implements AtletaUsaMao {
         this.arremessar(this.getNome());
     }
 
+    @Override
+    public String toString() {
+        return this.getNome() + " jogador de basquete";
+    }
 }

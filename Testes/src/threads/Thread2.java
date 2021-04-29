@@ -16,15 +16,13 @@ public class Thread2 implements Runnable {
     public void run() {
         System.out.println(this.nome + " começou...");
 
-        for(int i = 0; i <= num; i++) {
+        for(int i = num; i >= 0; i--) {
             try{
-                Thread.sleep(random.nextInt(5000));
-                System.out.println(String.format("%s: %d", this.nome, i));
-            } catch (InterruptedException e) {
-            }
+                int rand = random.nextInt(5000);
+                Thread.sleep(rand);
+                System.out.println(String.format("%s: %d - %.3fs", this.nome, i, (float) rand / 1000));
+            } catch (InterruptedException e) {}
         }
-
-        System.out.println(this.nome + " terminou sua execução.");
     }
 
     public String getNome() {

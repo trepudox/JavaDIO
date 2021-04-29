@@ -1,4 +1,4 @@
-package collections.classeArrayList;
+package collectionsEMap.classeArrayList;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package collections.classeQueue;
+package collectionsEMap.classeQueue;
 
 import java.util.LinkedList;
 import java.util.Queue;

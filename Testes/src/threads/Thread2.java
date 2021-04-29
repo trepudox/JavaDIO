@@ -22,6 +22,10 @@ public class Thread2 implements Runnable {
                 Thread.sleep(rand);
                 System.out.println(String.format("%s: %d - %.3fs", this.nome, i, (float) rand / 1000));
             } catch (InterruptedException e) {}
+            catch (Exception e) {
+                System.out.println("\nHouve um erro inesperado");
+                System.out.println("Erro: " + e);
+            }
         }
     }
 

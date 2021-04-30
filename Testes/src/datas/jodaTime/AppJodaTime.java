@@ -37,8 +37,10 @@ public class AppJodaTime {
         LocalDateTime dateTime = LocalDateTime.now();
         System.out.println(dateTime);
 
-        System.out.println(dateTime.plusDays(100).atZone(ZoneId.systemDefault()));
+        //maneira 1
+        System.out.println(dateTime.plusDays(100).toString() + LocalDateTime.now().atZone(ZoneId.systemDefault()).getOffset());
 
+        //maneira 2
         String iso = dateTime.plusDays(100).atZone(ZoneId.systemDefault()).toString();
         iso = iso.substring(0, 35);
         System.out.println(iso);

@@ -3,6 +3,7 @@ package datas.jodaTime;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 public class AppJodaTime {
 
@@ -36,8 +37,11 @@ public class AppJodaTime {
         LocalDateTime dateTime = LocalDateTime.now();
         System.out.println(dateTime);
 
-        System.out.println(dateTime.plusDays(100000).withNano(0));
+        System.out.println(dateTime.plusDays(100).atZone(ZoneId.systemDefault()));
 
+        String iso = dateTime.plusDays(100).atZone(ZoneId.systemDefault()).toString();
+        iso = iso.substring(0, 35);
+        System.out.println(iso);
 
     }
     

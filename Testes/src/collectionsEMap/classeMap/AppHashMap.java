@@ -2,6 +2,7 @@ package collectionsEMap.classeMap;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class AppHashMap {
     public static void main(String[] args) {
@@ -18,8 +19,8 @@ public class AppHashMap {
         tbUsuarios.putIfAbsent("Ramvp", "arroz");
         System.out.println(tbUsuarios);
         
-        //usando um parâmetro só esse método remove a chave e seu valor
-        //usando dois parâmetros esse metódo removerá a chave e seu valor APENAS se os valores forem iguais aos passados
+        //usando um parâmetro só esse método remove a chave e seu valor,
+        //já usando dois parâmetros esse metódo removerá a chave e seu valor APENAS se os valores forem iguais aos passados
         tbUsuarios.remove("Ramvp", "duende10");
         System.out.println(tbUsuarios);
 
@@ -29,6 +30,15 @@ public class AppHashMap {
         System.out.println("\nNAVEGAÇÃO: ");
         for (Map.Entry<String, String> valores : tbUsuarios.entrySet()) {
             System.out.println("--> " + valores.getKey() + ":" + valores.getValue());
+        }
+
+        Set<Map.Entry<String, String>> set = tbUsuarios.entrySet();
+
+        //System.out.println(set);
+
+        System.out.println("\nNAVEGAÇÃO 2: ");
+        for (Map.Entry<String, String> entry : set) {
+            System.out.println("--> " + entry.getKey() + ":" + entry.getValue());
         }
 
     }

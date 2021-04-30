@@ -1,4 +1,4 @@
-package optionalEStream;
+package optionalEStream.optional;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;

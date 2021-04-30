@@ -1,5 +1,7 @@
 package testes1;
 
+import java.util.Objects;
+
 public class Classe {
     
     private String marca;
@@ -44,5 +46,28 @@ public class Classe {
         //deu preguiça
 
         this.genteDentro -= g;
+    }
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getClass(), marca, modelo, lugares, genteDentro);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (this.getClass() != o.getClass())
+            return false;
+        if (this.hashCode() != o.hashCode())
+            return false;
+
+        return true;
     }
 }

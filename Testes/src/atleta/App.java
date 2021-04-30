@@ -12,7 +12,7 @@ public class App {
 
         System.out.println(jogador1.getClass());
 
-        
+        System.out.println(jogador3);
         
     }
 }

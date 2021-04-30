@@ -36,6 +36,5 @@ public class AppArrayList {
         
         System.out.println(Arrays.toString(copia));
 
-        ArrayList<String> nomes2 = new ArrayList<>();
     }
 }

@@ -90,16 +90,20 @@ public class ArrayListStream {
 
         // findFirst e findAny - findFirst retorna o primeiro da lista, 
         // findAny retorna "qualquer um", é mais performático mas menos consistente.
-        System.out.println(lista.stream().findFirst().get());
+        System.out.print("\n" + lista.stream().findFirst().get());
+        System.out.print(" ");
         System.out.println(lista.stream().findAny().get());
 
         // sorted - ordena os itens (usa o metodo compareTo() !!!)
-        System.out.println(lista.stream().sorted().collect(Collectors.toList()));
+        System.out.println("\nLISTA COM ITENS ORDENADOS: " + lista.stream().sorted().collect(Collectors.toList()));
 
         // groupingBy - semelhante ao do SQL, agrupa de acordo com uma característica em comum com outros elementos
-        System.out.println(lista.stream().map((e) -> e.concat(":" + e.length()))
+        System.out.println("\nLISTA AGRUPADA POR TAMANHO: " + lista.stream().map((e) -> e.concat(":" + e.length()))
                 .collect(Collectors.groupingBy((e) -> e.length() - 2)));
 
+        // limit - limita o numero de elementos
+        System.out.println("\nRETORNO DE APENAS 3 ITENS: " + lista.stream().limit(3).collect(Collectors.toList()));
+        
         // close - fecha a stream
         lista.stream().close();
 

@@ -43,5 +43,20 @@ public class PessoaStream {
         System.out.print("\nPessoa mais nova da lista: ");
         System.out.println(listaPessoas.stream().min((o1, o2) -> o1.getIdade() - o2.getIdade()).get());
 
+        System.out.print("\nSoma das idades: ");
+        System.out.println(listaPessoas.stream().reduce(0, (result, o) -> result + o.getIdade(), Integer::sum));
+
+        System.out.print("\nMedia das idades: ");
+        System.out.println(listaPessoas.stream().reduce(0, (result, o) -> (result + o.getIdade()), Integer::sum) / listaPessoas.stream().count());
+
+        /*        FAZ O MESMO QUE A LINHA 47!!!!! (diferença de desempenho e legibilidade gritantes)
+
+        int cont = 0;
+        for (Pessoa p : listaPessoas) {
+            cont += p.getIdade();
+        }
+        System.out.println(cont);
+
+        */
     }
 }

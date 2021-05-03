@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ArrayListStream {
 
@@ -83,6 +81,10 @@ public class ArrayListStream {
 
 
         // OUTRAS FUNÇÕES IMPORTANTES
+
+        // Collectors
+        // Collectors.toList(), Collectors.toSet() - transforma a Stream atual em uma Collection do tipo escolhido
+        // Collectors.joining() - trasnforma toda a Stream em uma String só
         
         // distinct - remove duplicados da lista
         System.out.println("\nLISTA COM DUPLICADOS: " + lista);

@@ -69,14 +69,14 @@ public class ArrayListStream {
         
         
         // Match - retornam true ou false se todos/qualquer/nenhum elemento(s) bater a condição exigida
-        boolean todosNaListaPossuemLetraA = lista.stream().allMatch((e) -> e.toLowerCase().contains("a"));
-        System.out.println("\ntodosNaListaPossuemLetraA ? " + todosNaListaPossuemLetraA);
+        boolean allPossuemLetraA = lista.stream().allMatch((e) -> e.toLowerCase().contains("a"));
+        System.out.println("\nTodos na lista possuem letra a 'A' ? " + allPossuemLetraA);
 
-        boolean qualquerUmNaListaPossuiLetraW = lista.stream().anyMatch((e) -> e.toLowerCase().contains("w"));
-        System.out.println("qualquerUmNaListaPossuiLetraW ? " + qualquerUmNaListaPossuiLetraW);
+        boolean anyPossuiLetraW = lista.stream().anyMatch((e) -> e.toLowerCase().contains("w"));
+        System.out.println("Qualquer um na lista possui a letra 'W' ? " + anyPossuiLetraW);
 
-        boolean nenhumNaListaTemMaisDe10DeLength = lista.stream().noneMatch((e) -> e.length() > 10);
-        System.out.println("nenhumNaListaTemMaisDe10DeLength ? " + nenhumNaListaTemMaisDe10DeLength);
+        boolean noneTemMaisDe10DeLength = lista.stream().noneMatch((e) -> e.length() > 10);
+        System.out.println("Nenhum na lista tem mais de 10 de length ? " + noneTemMaisDe10DeLength);
 
 
 

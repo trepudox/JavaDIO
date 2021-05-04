@@ -106,9 +106,15 @@ public class ArrayListStream {
         // limit - limita o numero de elementos
         System.out.println("\nRETORNO DE APENAS 3 ITENS: " + lista.stream().limit(3).collect(Collectors.toList()));
 
+        // skip - pula a quantidade especificada de elementos da lista
+        System.out.println("\nPULANDO OS PRIMEIROS 3 ELEMENTOS: " + lista.stream().skip(3).collect(Collectors.toList()));
+
         // reduce - reduz a lista a um elemento só
         // código que soma o tamanho de todos os nomes
-        System.out.println("---> " + lista.stream().reduce(0, (result, e) -> result + e.length(), Integer::sum));
+        System.out.println("\nSOMA DO TAMANHO DOS NOMES: " + lista.stream().reduce(0, (result, e) -> result + e.length(), Integer::sum));
+
+        // código que calcula a media do tamanho dos nomes
+        System.out.println(String.format("MEDIA DO TAMANHO DOS NOMES: %.2f", lista.stream().reduce(0, (resultado, o) -> resultado + o.length(), Integer::sum) / (double) lista.size()));
 
         // collect - usado desta maneira transforma a stream em uma lista ou um set por exemplo
         lista.stream().collect(Collectors.toList());

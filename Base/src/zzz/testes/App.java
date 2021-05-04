@@ -1,4 +1,4 @@
-package testes1;
+package zzz.testes;
 
 public class App {
     public static void main(String[] args) throws Exception {

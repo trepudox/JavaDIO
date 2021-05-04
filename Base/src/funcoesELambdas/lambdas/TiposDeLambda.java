@@ -47,11 +47,11 @@ public class TiposDeLambda {
 
 
         // Supplier - não recebe nada e retorna algum objeto de tipo explícito
-        Supplier<TiposDeLambda> criaPessoa = TiposDeLambda::new;
+        Supplier<TiposDeLambda> criaObjeto = TiposDeLambda::new;
         Supplier<String> criaString = String::new;
         Supplier<Integer> retornaDez = () -> 10;
 
-        System.out.println("\n" + criaPessoa.get());
+        System.out.println("\n" + criaObjeto.get());
         System.out.println(criaString.get()); //vazio
         System.out.println(retornaDez.get());
 

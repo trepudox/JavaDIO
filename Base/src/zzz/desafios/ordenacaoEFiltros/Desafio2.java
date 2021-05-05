@@ -3,7 +3,6 @@ package zzz.desafios.ordenacaoEFiltros;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,13 +20,18 @@ public class Desafio2 {
      */
 
     public static void main(String[] args) {
-        List<String> lista = new ArrayList<>();
+        List<List<String>> lista = new ArrayList<>();
 
+        lista.add(Arrays.asList("laranja", "carne", "suco", "carne"));
+        lista.add(Arrays.asList("picles", "laranja", "picles", "laranja", "pera"));
+        lista.add(Arrays.asList("laranja", "pera", "pera"));
 
+        lista.stream().forEach(l -> {
+            List<String> lf = l.stream().distinct().sorted(Collator.getInstance()).collect(Collectors.toList());
+            System.out.println(lf.stream().reduce("", (str, elemento) -> str + " " + elemento).trim());
+            });
 
-        lista.addAll(Arrays.asList("carne", "laranja", "suco", "picles", "laranja", "picles",
-                        "laranja", "pera", "laranja", "pera", "pera"));
-
-        System.out.println(lista.stream().distinct().sorted(Collator.getInstance()).collect(Collectors.toList()));
+        
+        
     }
 }

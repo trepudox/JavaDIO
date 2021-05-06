@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/loja?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: SENHADOMYSQL #substituir pra root
+    driver-class-name: com.mysql.jdbc.Driver
+
+    jpa:
+      show-sql: true

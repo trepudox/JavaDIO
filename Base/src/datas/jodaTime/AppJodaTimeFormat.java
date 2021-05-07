@@ -16,7 +16,7 @@ public class AppJodaTimeFormat {
 
         // formato de data brasileiro
         System.out.println(data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-        System.out.println(dataTempo.format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss,SSSSSS")));
+        System.out.println(dataTempo.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss,SSSSSS"))); // HH maiúsculo torna a hora no padrao de 24 horas
 
         // formato ISO com Offset explicito
         System.out.println(dataTempo.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));

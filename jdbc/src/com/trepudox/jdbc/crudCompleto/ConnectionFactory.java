@@ -1,4 +1,4 @@
-package com.trepudox.jdbc.testeElaborado;
+package com.trepudox.jdbc.crudCompleto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,6 @@ public class ConnectionFactory {
         Connection connection = null;
 
         try {
-            System.out.println("\n*** CONECTADO AO BANCO DE DADOS ***\n");
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             System.out.println("\n*** FALHA AO SE CONCECTAR AO BANCO DE DADOS ***\n");

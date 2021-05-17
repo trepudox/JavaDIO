@@ -1,4 +1,4 @@
-package com.trepudox.jdbc.testeElaborado;
+package com.trepudox.jdbc.crudCompleto;
 
 import java.time.LocalDate;
 
@@ -57,6 +57,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return String.format("%d - %s - " + dataNasc + " - %s", id, nome, cidade);
+        return String.format("%03d     %-15.15s\t" + dataNasc + "\t\t%s", id, nome, cidade);
     }
 }

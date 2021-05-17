@@ -1,4 +1,4 @@
-package com.trepudox.jdbc.testeElaborado;
+package com.trepudox.jdbc.crudCompleto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -82,10 +82,17 @@ public class PessoaDAO {
         try(Connection connection = ConnectionFactory.getConnection()) {
             PreparedStatement stmt = connection.prepareStatement("UPDATE pessoa SET nome = ?, dataNasc = ?, cidade = ?" +
                     "WHERE id = ?");
+            stmt.setString(1, pessoa.getNome());
+            stmt.setObject(2, pessoa.getDataNasc());
+            stmt.setString(3, pessoa.getCidade());
+            Long idPessoa = pessoa.getId();
+            stmt.setLong(4, idPessoa);
+
+            stmt.executeUpdate();
+
             // TODO: fazer o update
 
-
-            return Optional.of(pessoa);
+            return selectById(idPessoa);
         } catch (SQLException e) {
             System.err.println("\nupdate falhou!\n");
             e.printStackTrace();
@@ -97,10 +104,12 @@ public class PessoaDAO {
         try(Connection connection = ConnectionFactory.getConnection()) {
             Optional<Pessoa> p = selectById(id);
             if (p.isEmpty())
-                throw new SQLException("Uma pessoa com esse ID não existe!");
+                throw new NullPointerException("Uma pessoa com esse ID não existe!");
 
-            PreparedStatement stmt = connection.prepareStatement("DELETE FROM pessoa WHERE id = ?");
+            PreparedStatement stmt = connection.prepareStatement("DELETE FROM pessoa WHERE id = ?;");
             stmt.setLong(1, id);
+
+            stmt.executeUpdate();
 
             return p;
         } catch (SQLException e) {

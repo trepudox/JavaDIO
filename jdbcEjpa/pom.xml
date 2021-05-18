@@ -5,12 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.trepudox</groupId>
-    <artifactId>jdbc</artifactId>
+    <artifactId>jdbcEjpa</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <build>
-        <sourceDirectory>src</sourceDirectory>
-    </build>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>

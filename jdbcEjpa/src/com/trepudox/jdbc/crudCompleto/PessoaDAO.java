@@ -90,8 +90,6 @@ public class PessoaDAO {
 
             stmt.executeUpdate();
 
-            // TODO: fazer o update
-
             return selectById(idPessoa);
         } catch (SQLException e) {
             System.err.println("\nupdate falhou!\n");

@@ -11,8 +11,6 @@ public class CalculadoraTest {
     public void testSoma1() {
         Integer valor = Calculadora.soma(1,2,3);
         assertEquals(Integer.valueOf(6), valor);
-        // valor = null;
-        // assertNotNull(valor);
     }
 
     @Test
@@ -29,8 +27,6 @@ public class CalculadoraTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testDivisaoPorZero() {
-
-
         Calculadora.divisao(1, 0);
     }
 

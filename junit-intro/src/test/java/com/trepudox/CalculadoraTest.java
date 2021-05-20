@@ -1,38 +1,46 @@
 package com.trepudox;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
-public class CalculadoraTest {
+import java.time.Duration;
+import java.util.Random;
 
-    @Test
-    public void testSoma1() {
-        Integer valor = Calculadora.soma(1,2,3);
-        assertEquals(Integer.valueOf(6), valor);
-    }
+class CalculadoraTest {
 
-    @Test
-    public void testSoma2() {
-        int valor = Calculadora.soma(1,2,99);
-        assertEquals(102, valor);
-    }
+    private final Random random = new Random();
 
     @Test
-    public void testSoma3() {
-        int valor = Calculadora.soma(1,2,7);
-        assertEquals(10, valor);
+    void testSoma() {
+        // os Assumes testam uma condição, caso ela não atenda os requisitos, o teste é ignorado
+        assumeTrue(true, "testSoma ignorado");
+
+        int resultado = Calculadora.soma(1,2,3);
+
+        assertEquals(6, resultado);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testDivisaoPorZero() {
-        Calculadora.divisao(1, 0);
+    @RepeatedTest(value = 10, name = "Teste {currentRepetition} de {totalRepetitions}")
+    void testSoma10Vezes() {
+        int n1 = random.nextInt();
+        int n2 = random.nextInt();
+        int esperado = n1 + n2;
+
+        int resultado = Calculadora.soma(n1, n2);
+
+        assertEquals(esperado, resultado);
     }
 
-    @Test(timeout = 10000)
-    public void testTimeout() throws InterruptedException {
-        Calculadora.metodoDemorado();
-
+    @Test
+    void testDivisaoPorZero() {
+        assertThrows(IllegalArgumentException.class, () -> Calculadora.divisao(1, 0));
     }
+
+    @Test
+    void testTimeout() {
+        assertTimeout(Duration.ofMillis(5000), Calculadora::metodoDemorado);
+    }
+
 }

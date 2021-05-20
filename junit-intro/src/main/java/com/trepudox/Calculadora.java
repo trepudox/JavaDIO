@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Calculadora {
 
+    private Calculadora() {}
+
     public static int soma(int... valores) {
         return Arrays.stream(valores).reduce(0, (res, e) -> res + e);
     }
@@ -16,8 +18,7 @@ public class Calculadora {
     }
 
     public static void metodoDemorado() throws InterruptedException {
-        Thread.sleep(5000);
-        return;
+        Thread.sleep(2000);
     }
 
 }

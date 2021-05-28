@@ -1,15 +1,14 @@
 package zzz.testes;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class App {
+
+    private static LocalDateTime dataPostagem = LocalDateTime.now();
     public static void main(String[] args) throws Exception {
 
-        Classe carro = new Classe("Volkswagen", "Fusca", 5);
+        System.out.println(dataPostagem.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
 
-        carro.addGente(10);
-        carro.addGente(1);
-
-        carro.tiraGente(10);
-        carro.tiraGente(3);
-        carro.tiraGente(1);
     }
 }

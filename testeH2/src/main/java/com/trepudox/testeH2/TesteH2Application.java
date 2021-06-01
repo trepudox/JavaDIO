@@ -18,16 +18,16 @@ public class TesteH2Application {
 	@Autowired
 	private JogadorRepository jogadorRepository;
 
-	private static Random random = new Random();
-	private static List<String> vogal = List.of("a","e","i","o","u"); // 5
-	private static List<String> consoante = List.of("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v",
-			"w","x","y","z"); // 21
+	private static final Random random = new Random();
+	private static final List<String> vogal = List.of("a","e","i","o","u"); // 5
+	private static final List<String> consoante = List.of("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s",
+			"t","v","w","x","y","z"); // 21
 
 	public static void main(String[] args) {
 		SpringApplication.run(TesteH2Application.class, args);
 	}
 
-	@Scheduled(fixedDelay = 10000)
+	@Scheduled(fixedDelay = 5000)
 	private void addJogador() {
 		int pace = random.nextInt(49) + 50;
 		int dribbling = random.nextInt(50) + 50;
@@ -52,7 +52,7 @@ public class TesteH2Application {
 		String nome = "";
 		boolean ultimaFoiVogal = false;
 
-		if (random.nextDouble() > 0.80) {
+		if (random.nextDouble() > 0.66) {
 			nome += consoante.get(random.nextInt(21));
 		} else {
 			nome += vogal.get(random.nextInt(5));

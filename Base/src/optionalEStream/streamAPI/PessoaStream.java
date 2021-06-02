@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import collectionsEMap.classeArrayList.Pessoa;
-
 public class PessoaStream {
     public static void main(String[] args) {
         List<Pessoa> listaPessoas = new ArrayList<>();

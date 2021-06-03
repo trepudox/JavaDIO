@@ -25,6 +25,13 @@ public class Teste {
             return resultado != 0 ? resultado : Collator.getInstance().compare(e1, e2);
         }).reduce("", (acumulador, entrada) -> acumulador + entrada.charAt(0) + " ").trim());
 
+        lista.stream().filter(e -> e.startsWith("a") || e.startsWith("A"))
+                .sorted((e1, e2) -> {
+                    int resultado = e1.length() - e2.length();
+                    return resultado != 0 ? resultado : Collator.getInstance().compare(e1, e2);
+                })
+                .forEach(System.out::println);
+
 //        System.out.println(lista.stream().anyMatch(e -> e.equals("asd")));
 
 

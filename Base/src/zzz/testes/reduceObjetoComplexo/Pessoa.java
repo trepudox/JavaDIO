@@ -1,4 +1,4 @@
-package optionalEStream.streamAPI;
+package zzz.testes.reduceObjetoComplexo;
 
 import java.text.Collator;
 import java.util.Objects;
@@ -14,11 +14,19 @@ public class Pessoa implements Comparable<Pessoa> {
     }
 
     public String getNome() {
-        return this.nome;
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getIdade() {
-        return this.idade;
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     @Override
